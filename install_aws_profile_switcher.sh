@@ -20,7 +20,7 @@ if ! command -v git >/dev/null 2>&1; then
 fi
 
 # Configuration
-REPO_URL="https://github.com/yourusername/yourrepo.git"  # Replace with your actual repo
+REPO_URL="https://github.com/wprodev/aws-profile-switcher.git"  # Replace with your actual repo
 BINARY_NAME="aws-profile-switcher"
 SYMLINK_NAME="aps"
 INSTALL_DIR="/usr/local/bin"
