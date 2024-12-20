@@ -30,9 +30,9 @@ Use the provided installation script to download, build, and install `aws-profil
 1. **Download and Run the Install Script:**
 
   ```sh
-  curl -sSL https://raw.githubusercontent.com/yourusername/yourrepo/main/install_aws_profile_switcher.sh | bash
+  curl -sSL https://raw.githubusercontent.com/wprodev/aws-profile-switcher/main/install_aws_profile_switcher.sh | sh
   ```
   Or using `wget`:
   ```sh
-  wget -qO- https://raw.githubusercontent.com/yourusername/yourrepo/main/install_aws_profile_switcher.sh | bash
+  wget -qO- https://raw.githubusercontent.com/wprodev/aws-profile-switcher/main/install_aws_profile_switcher.sh | sh
   ```
