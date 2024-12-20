@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"io"
 	"log"
@@ -44,6 +45,8 @@ type model struct {
 	configPath string
 }
 
+const version string = "1.0.0"
+
 var warnings []string = []string{}
 var warningIcon string = "🚧"
 
@@ -55,6 +58,14 @@ var infos []string = []string{
 var infoIcon string = "ℹ️"
 
 func main() {
+	showVersion := flag.Bool("version", false, "Display the version of aws-profile-switcher")
+	flag.Parse()
+
+	if *showVersion {
+		fmt.Printf("aws-profile-switcher version %s\n", version)
+		os.Exit(0)
+	}
+
 	home, err := os.UserHomeDir()
 	if err != nil {
 		log.Fatal(err)

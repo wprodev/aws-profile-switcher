@@ -29,10 +29,90 @@ Use the provided installation script to download, build, and install `aws-profil
 
 1. **Download and Run the Install Script:**
 
-  ```sh
-  curl -sSL https://raw.githubusercontent.com/wprodev/aws-profile-switcher/main/install_aws_profile_switcher.sh | sh
-  ```
-  Or using `wget`:
-  ```sh
-  wget -qO- https://raw.githubusercontent.com/wprodev/aws-profile-switcher/main/install_aws_profile_switcher.sh | sh
-  ```
+    ```sh
+    curl -sSL https://raw.githubusercontent.com/wprodev/aws-profile-switcher/main/install_aws_profile_switcher.sh | sh
+    ```
+    Or using `wget`:
+    ```sh
+    wget -qO- https://raw.githubusercontent.com/wprodev/aws-profile-switcher/main/install_aws_profile_switcher.sh | sh
+    ```
+2. **Script Breakdown:**
+
+    Checks for Dependencies: Verifies that both go and git are installed.
+    Clones the Repository: Downloads the latest version from GitHub.
+    Builds the Binary: Compiles the Go program.
+    Installs the Binary: Places aws-profile-switcher in /usr/local/bin or falls back to $HOME/.local/bin if necessary.
+    Creates Symlink: Sets up aps as an alias for quick access.
+    Handles Overwrites: Prompts before overwriting existing binaries or symlinks.
+    PATH Verification: Alerts if the installation directory is not in your PATH.
+
+3. **Post-Installation:**
+
+    Verify Installation:
+
+    ```sh
+    aws-profile-switcher --version
+    # or
+    aps --version
+    ```
+    Add to PATH (*if necessary*):
+
+    If the script warns that the installation directory is not in your `PATH`, add it by appending the following line to your shell configuration file (`~/.bashrc`, `~/.zshrc`, etc.):
+
+    `export PATH="$PATH:$HOME/.local/bin"`
+
+    Then, reload your shell:
+      ```sh
+      source ~/.bashrc
+      # or
+      source ~/.zshrc
+      ```
+
+## 🎯 Usage
+
+  Launch the AWS Profile Switcher:
+    
+    ```sh
+    aws-profile-switcher
+    # or
+    aps
+    ```
+
+## 🔍 Troubleshooting
+
+  * **Emoji Rendering Issues:**
+    
+    If warning or info icons don't render correctly, ensure your terminal supports UTF-8 and is using a font that includes emoji glyphs.
+
+  * **Installation Permissions:**
+    
+    If installing to `/usr/local/bin `fails due to permission issues, ensure you have the necessary rights or use the local installation path.
+
+  * **PATH Issues:**
+    
+    If you can't run `aws-profile-switcher` or `aps` after installation, verify that the installation directory is included in your `PATH`.
+
+  * **Config File Not Detected:**
+    
+    Ensure your AWS config file is located at ~/.aws/config and follows the correct format with `[profile ...]` sections.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any bugs, features, or improvements.
+
+  1. Fork the Repository
+  2. Create a Feature Branch
+  3. Commit Your Changes
+  4. Push to Your Fork
+  5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 📚 References
+
+  - [AWS CLI Configuration Files](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
+  - [Bubble Tea](https://github.com/charmbracelet/bubbletea)
+  - [Lip Gloss](https://github.com/charmbracelet/lipgloss)
+  - [fsnotify](https://github.com/fsnotify/fsnotify)
