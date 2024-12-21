@@ -4,16 +4,24 @@
 
 A sleek, interactive terminal-based tool to manage your AWS profiles effortlessly. Switch between your AWS profiles with ease, view detailed configurations, and ensure your default profile is always up-to-date—all from your terminal.
 
----
+## Quickstart
 
-By defauft when executing any AWS CLI command the `[default]` profile (`~/.aws/config`) with it's corresponding access keys (`~/.aws/credentials`) are taken into account.
+By defauft when executing any AWS CLI commands the `[default]` profile (`~/.aws/config`) with it's corresponding access keys (`~/.aws/credentials`) are taken into account.
 
 AWS CLI allows to use specific profile in 2 ways:
 - Execute any `aws` cli command with `--profile` flag, e.g `aws s3 ls --profile my-profile`
 - Use env var e.g `export AWS_PROFILE=my-profile`
 
-In both cases you need to remember your profile name and type more text in your terminal. 
+In both cases you need to remember your profile name and type more text in your terminal, manually set default profile values or create some shell aliases.
 
+To avoid all that just install `aps` (aws-profile-switcher):
+```sh
+curl -sSL https://raw.githubusercontent.com/wprodev/aws-profile-switcher/main/install_aws_profile_switcher.sh | sh
+```
+and run it:
+```sh
+aps
+```
 
 ## 📋 Features
 
@@ -47,6 +55,8 @@ Use the provided installation script to download, build, and install `aws-profil
     ```sh
     wget -qO- https://raw.githubusercontent.com/wprodev/aws-profile-switcher/main/install_aws_profile_switcher.sh | sh
     ```
+
+    *NOTE: If `sudo` is not available and the user lacks write permissions to system directories (like `/usr/local/bin`), the script will fallback to install the binary in a user-specific directory `$HOME/.local/bin`*
 2. **Script Breakdown:**
 
     Checks for Dependencies: Verifies that both go and git are installed.
