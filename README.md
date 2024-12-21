@@ -72,11 +72,11 @@ Use the provided installation script to download, build, and install `aws-profil
 
   Launch the AWS Profile Switcher:
     
-    ```sh
-    aws-profile-switcher
-    # or
-    aps
-    ```
+  ```sh
+  aws-profile-switcher
+  # or
+  aps
+  ```
 
 ## 🔍 Troubleshooting
 
