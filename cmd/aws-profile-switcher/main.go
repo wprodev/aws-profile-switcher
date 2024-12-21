@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"io"
 	"log"
+	"os"
+	"path/filepath"
 	"strings"
 
 	"github.com/charmbracelet/bubbles/list"
@@ -66,12 +68,11 @@ type model struct {
 var configPath string = ""
 
 func main() {
-	// home, err := os.UserHomeDir()
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	//configPath = filepath.Join(home, ".aws", "config")
-	configPath = "./test2.ini"
+	home, err := os.UserHomeDir()
+	if err != nil {
+		log.Fatal(err)
+	}
+	configPath = filepath.Join(home, ".aws", "config")
 
 	cfg, err := ini.Load(configPath)
 	if err != nil {
