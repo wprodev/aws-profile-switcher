@@ -158,10 +158,12 @@ done
 IFS="$OLD_IFS"
 
 if [ "$PATH_INCLUDES_TARGET" = false ]; then
-    echo "Warning: '$TARGET_DIR' is not in your PATH."
+    echo "WARNING: '$TARGET_DIR' is not in your PATH."
     echo "You might need to add it to your PATH to run '$BINARY_NAME' or '$SYMLINK_NAME' directly."
+    echo ""
     echo "For example, add the following line to your ~/.bashrc or ~/.zshrc:"
-    echo "  export PATH=\"\$PATH:$TARGET_DIR\""
+    echo "    export PATH=\"\$PATH:$TARGET_DIR\""
+    echo ""
 fi
 
 echo "Installation complete. You can run '$BINARY_NAME' or '$SYMLINK_NAME' now."
