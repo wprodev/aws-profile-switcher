@@ -4,6 +4,17 @@
 
 A sleek, interactive terminal-based tool to manage your AWS profiles effortlessly. Switch between your AWS profiles with ease, view detailed configurations, and ensure your default profile is always up-to-date—all from your terminal.
 
+---
+
+By defauft when executing any AWS CLI command the `[default]` profile (`~/.aws/config`) with it's corresponding access keys (`~/.aws/credentials`) are taken into account.
+
+AWS CLI allows to use specific profile in 2 ways:
+- Execute any `aws` cli command with `--profile` flag, e.g `aws s3 ls --profile my-profile`
+- Use env var e.g `export AWS_PROFILE=my-profile`
+
+In both cases you need to remember your profile name and type more text in your terminal. 
+
+
 ## 📋 Features
 
 - **Profile Listing:** Displays all your AWS profiles defined in `~/.aws/config`.
